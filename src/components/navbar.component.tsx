@@ -55,6 +55,11 @@ const SiteNavbar = () => {
             {isLoggedIn ? ( // Check if user is logged in
               <>
                 <Nav.Item>
+                  <Nav.Link as={Link} to="/create-post">
+                    Create Post
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Nav.Link as={Link} to="/sign-in" onClick={handleLogout}>
                     Logout
                   </Nav.Link>

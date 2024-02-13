@@ -4,6 +4,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Home from "./components/home.component";
 import SiteNavbar from "./components/navbar.component";
+import CreatePost from "./components/create.post.component";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <div className="auth-inner">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/create-post" element={<CreatePost />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
             </Routes>
