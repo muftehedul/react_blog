@@ -13,7 +13,7 @@ interface Post {
 const Home = () => {
   const navigate = useNavigate();
   if (token == null) {
-    navigate("/sign-in");
+    // navigate("/sign-in");
   }
   const [posts, setPosts] = useState<Post[]>([]); // Specify the type as an array of Post
   const [loading, setLoading] = useState(true);

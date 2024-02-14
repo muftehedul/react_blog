@@ -45,6 +45,7 @@ function LoginForm() {
 
       const responseData = await response.json();
       localStorage.setItem("token", responseData.token);
+      localStorage.setItem("expires_at", responseData.expires_at);
       location.reload();
       // navigate("/");
     } catch (error) {
