@@ -43,6 +43,9 @@ const Home = () => {
 
   return (
     <div className="container">
+      <br />
+      <br />
+      <br />
       <h3>Welcome To Home Page</h3>
       {loading ? (
         <p>Loading...</p>

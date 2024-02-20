@@ -67,38 +67,40 @@ const CreatePost = () => {
       <br />
       <br />
       <br />
-      <h2>Create a New Post</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="postTitle" className="form-label">
-            Post Title
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="postTitle"
-            value={postTitle}
-            onChange={handleTitleChange}
-            required // Added required attribute
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="postBody" className="form-label">
-            Post Body
-          </label>
-          <textarea
-            className="form-control"
-            id="postBody"
-            rows={3}
-            value={postBody}
-            onChange={handleBodyChange}
-            required // Added required attribute
-          ></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Create Post
-        </button>
-      </form>
+      <div className="row justify-content-center">
+        <h2 className="col-md-8">Create a New Post</h2>
+        <form className="col-md-8" onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="postTitle" className="form-label">
+              Post Title
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="postTitle"
+              value={postTitle}
+              onChange={handleTitleChange}
+              required // Added required attribute
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="postBody" className="form-label">
+              Post Body
+            </label>
+            <textarea
+              className="form-control"
+              id="postBody"
+              rows={3}
+              value={postBody}
+              onChange={handleBodyChange}
+              required // Added required attribute
+            ></textarea>
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Create Post
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
