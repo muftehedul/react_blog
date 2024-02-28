@@ -98,6 +98,39 @@ const Home = () => {
     }
   };
 
+  const handleDelete = async (postId: number) => {
+    try {
+      const delete_response = await axios.delete(
+        `http://127.0.0.1:8000/api/post/${postId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (delete_response.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Post deleted successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        // Refresh posts after delete
+        const response = await axios.get<Post[]>(
+          "http://127.0.0.1:8000/api/all_post",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setPosts(response.data);
+      }
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
+
   return (
     <div className="container">
       <br />
@@ -150,10 +183,17 @@ const Home = () => {
                       <p className="card-text">{post.post_body}</p>
                       <button
                         type="button"
-                        className="btn btn-primary"
+                        className="btn btn-primary mr-2"
                         onClick={() => handleEdit(post)}
                       >
                         Edit
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={() => handleDelete(post.id)}
+                      >
+                        Delete
                       </button>
                     </>
                   )}
