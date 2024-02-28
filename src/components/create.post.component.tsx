@@ -90,7 +90,7 @@ const CreatePost = () => {
             <textarea
               className="form-control"
               id="postBody"
-              rows={3}
+              rows={postBody.split(" ").length / 20} // Adjust the number of rows dynamically
               value={postBody}
               onChange={handleBodyChange}
               required // Added required attribute

@@ -164,6 +164,7 @@ const Home = () => {
                           name="post_body"
                           value={editedPost.post_body}
                           onChange={handleInputChange}
+                          rows={editedPost.post_body.split(" ").length / 10} // Adjust the number of rows dynamically
                         ></textarea>
                       </div>
                       <button type="submit" className="btn btn-primary mr-2">
